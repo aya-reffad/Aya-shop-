@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aya-Shop | Temu • SHEIN • AliExpress</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">🛍️ Aya-Shop</div>
+  <nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#order">اطلب الآن</a>
+    <a href="#info">معلومات الطلب</a>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="hero">
+    <span class="badge">Temu • SHEIN • AliExpress</span>
+    <h1>اطلبي منتجاتك بسهولة مع <span>Aya-Shop</span> 🛍️</h1>
+    <p>طلبات فردية أو جماعية، مع توصيل متوفر إلى جميع الولايات الجزائرية.</p>
+    <a class="btn" href="#order">ابدئي الطلب</a>
+  </section>
+
+  <section class="stores">
+    <h2>🛒 المتاجر</h2>
+    <div class="cards">
+      <div class="card">🟠 <h3>Temu</h3><p>اطلبي منتجاتك من Temu.</p></div>
+      <div class="card">🩷 <h3>SHEIN</h3><p>أزياء وإكسسوارات ومنتجات متنوعة.</p></div>
+      <div class="card">🔵 <h3>AliExpress</h3><p>منتجات متنوعة من AliExpress.</p></div>
+    </div>
+  </section>
+
+  <section id="order" class="order">
+    <h2>📦 إرسال طلب</h2>
+    <form id="orderForm">
+      <label>المتجر
+        <select id="store" required>
+          <option value="">اختاري المتجر</option>
+          <option>Temu</option>
+          <option>SHEIN</option>
+          <option>AliExpress</option>
+        </select>
+      </label>
+
+      <label>نوع الطلب
+        <select id="type" required>
+          <option value="">اختاري نوع الطلب</option>
+          <option>طلبية فردية — 21$</option>
+          <option>طلبية جماعية — حسب تفاصيل الطلب</option>
+        </select>
+      </label>
+
+      <label>الولاية
+        <select id="wilaya" required>
+          <option value="">اختاري ولايتك</option>
+          <option>أدرار</option><option>الشلف</option><option>الأغواط</option>
+          <option>أم البواقي</option><option>باتنة</option><option>بجاية</option>
+          <option>بسكرة</option><option>بشار</option><option>البليدة</option>
+          <option>البويرة</option><option>تمنراست</option><option>تبسة</option>
+          <option>تلمسان</option><option>تيارت</option><option>تيزي وزو</option>
+          <option>الجزائر</option><option>الجلفة</option><option>جيجل</option>
+          <option>سطيف</option><option>سعيدة</option><option>سكيكدة</option>
+          <option>سيدي بلعباس</option><option>عنابة</option><option>قالمة</option>
+          <option>قسنطينة</option><option>المدية</option><option>مستغانم</option>
+          <option>المسيلة</option><option>معسكر</option><option>ورقلة</option>
+          <option>وهران</option><option>البيض</option><option>إليزي</option>
+          <option>برج بوعريريج</option><option>بومرداس</option><option>الطارف</option>
+          <option>تندوف</option><option>تيسمسيلت</option><option>الوادي</option>
+          <option>خنشلة</option><option>سوق أهراس</option><option>تيبازة</option>
+          <option>ميلة</option><option>عين الدفلى</option><option>النعامة</option>
+          <option>عين تموشنت</option><option>غرداية</option><option>غليزان</option>
+          <option>تيميمون</option><option>برج باجي مختار</option><option>أولاد جلال</option>
+          <option>بني عباس</option><option>إن صالح</option><option>إن قزام</option>
+          <option>تقرت</option><option>جانت</option><option>المغير</option>
+          <option>المنيعة</option>
+        </select>
+      </label>
+
+      <label>رابط المنتج
+        <input id="link" type="url" placeholder="ألصقي رابط المنتج هنا" required>
+      </label>
+
+      <label>ملاحظات
+        <textarea id="notes" rows="4" placeholder="اللون، المقاس، الكمية..."></textarea>
+      </label>
+
+      <button class="btn" type="submit">إرسال الطلب</button>
+      <p id="result"></p>
+    </form>
+  </section>
+
+  <section id="info" class="info">
+    <div><strong>💳 الدفع مسبقًا</strong><br>عبر BaridiMob</div>
+    <div><strong>📦 التوصيل</strong><br>متوفر إلى جميع الولايات</div>
+    <div><strong>💵 الطلب الفردي</strong><br>21$ حسب نظام Temu</div>
+    <div><strong>👥 الطلب الجماعي</strong><br>حسب تفاصيل الطلب</div>
+  </section>
+</main>
+
+<footer>© 2026 Aya-Shop — جميع الحقوق محفوظة</footer>
+<script src="script.js"></script>
+</body>
+</html>
