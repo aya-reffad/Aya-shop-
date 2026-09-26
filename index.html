@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AYA SHOP | وسيطة شراء</title>
+
+  <meta name="description"
+        content="AYA SHOP - وسيطة شراء من Temu و Shein و AliExpress">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Tahoma", Arial, sans-serif;
+    }
+
+    body {
+      background: #fff8fc;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff4f9a, #9b4dca);
+      color: white;
+      padding: 18px 6%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px #0002;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 7px;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 20px;
+      background:
+        radial-gradient(circle at top right, #ffd2e7, transparent 35%),
+        radial-gradient(circle at bottom left, #e4d0ff, transparent 35%),
+        #fff8fc;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #fff;
+      color: #c43b7d;
+      padding: 7px 18px;
+      border-radius: 30px;
+      box-shadow: 0 5px 20px #0001;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 8vw, 72px);
+      color: #bd3978;
+      margin-bottom: 10px;
+    }
+
+    .hero h2 {
+      font-size: clamp(22px, 5vw, 38px);
+      color: #54215e;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #666;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+      padding: 13px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: .3s;
+      display: inline-block;
+    }
+
+    .btn-main {
+      background: linear-gradient(135deg, #ff4f9a, #9b4dca);
+      color: white;
+      box-shadow: 0 8px 20px #d83b882e;
+    }
+
+    .btn-light {
+      background: white;
+      color: #a33879;
+      box-shadow: 0 5px 18px #0001;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 70px 6%;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #54215e;
+      font-size: 32px;
+      margin-bottom: 35px;
+    }
+
+    .platforms,
+    .steps,
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 22px;
+      box-shadow: 0 8px 25px #0000000c;
+      text-align: center;
+      border: 1px solid #f4dce9;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .icon {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: #b53676;
+      margin-bottom: 8px;
+    }
+
+    .calculator {
+      max-width: 650px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 10px 35px #00000012;
+    }
+
+    label {
+      display: block;
+      margin: 13px 0 6px;
+      font-weight: bold;
+      color: #54215e;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #e6cbd9;
+      border-radius: 13px;
+      outline: none;
+      background: #fffafd;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #d74691;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 15px;
+      background: #fff0f7;
+      color: #8d2862;
+      font-weight: bold;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .payment {
+      max-width: 800px;
+      margin: auto;
+      background: linear-gradient(135deg, #fff, #fff1f8);
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 8px 30px #00000010;
+    }
+
+    .payment-box {
+      padding: 20px;
+      border-radius: 18px;
+      background: white;
+      margin-top: 15px;
+    }
+
+    .upload {
+      border: 2px dashed #d64b92;
+      padding: 25px;
+      text-align: center;
+      border-radius: 18px;
+      margin-top: 15px;
+    }
+
+    .reviews .card {
+      position: relative;
+    }
+
+    .stars {
+      color: #ffb300;
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    form {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 8px 30px #0001;
+    }
+
+    footer {
+      background: #35152f;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    .social {
+      margin: 15px 0;
+    }
+
+    .social a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    .watermark {
+      opacity: .65;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    @media(max-width: 700px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav div:last-child {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      section {
+        padding: 50px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">AYA SHOP ✨</div>
+
+    <div>
+      <a href="#home">الرئيسية</a>
+      <a href="#platforms">المواقع</a>
+      <a href="#calculator">الحساب</a>
+      <a href="#order">الطلب</a>
+      <a href="#reviews">آراء الزبائن</a>
+      <a href="#contact">تواصل</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- الرئيسية -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <span class="badge">🛍️ وسيطة شراء موثوقة</span>
+
+      <h1>AYA SHOP</h1>
+
+      <h2>اطلبي من مواقعك المفضلة بسهولة ✨</h2>
+
+      <p>
+        وسيطة شراء من المواقع العالمية
+        <strong>Temu</strong> و
+        <strong>Shein</strong> و
+        <strong>AliExpress</strong>
+        بطريقة سهلة ومنظمة.
+      </p>
+
+      <div class="buttons">
+        <a href="#order" class="btn btn-main">
+          🛒 اطلبي الآن
+        </a>
+
+        <a href="#calculator" class="btn btn-light">
+          🧮 احسبي السعر
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- المواقع -->
+  <section id="platforms">
+
+    <h2 class="section-title">🌍 مواقع الشراء</h2>
+
+    <div class="platforms">
+
+      <div class="card">
+        <div class="icon">🛍️</div>
+        <h3>Temu</h3>
+        <p>اختاري منتجاتك من Temu وأرسلي رابط المنتج.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">👗</div>
+        <h3>Shein</h3>
+        <p>ملابس، إكسسوارات ومنتجات متنوعة.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📦</div>
+        <h3>AliExpress</h3>
+        <p>منتجات عالمية بأسعار متنوعة.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- طريقة العمل -->
+  <section>
+
+    <h2 class="section-title">✨ كيف تتم الطلبية؟</h2>
+
+    <div class="steps">
+
+      <div class="card">
+        <div class="icon">1️⃣</div>
+        <h3>اختاري المنتج</h3>
+        <p>انسخي رابط المنتج من الموقع الذي تريدينه.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">2️⃣</div>
+        <h3>أرسلي الطلب</h3>
+        <p>أدخلي معلوماتك ورابط المنتج في النموذج.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">3️⃣</div>
+        <h3>تأكيد السعر</h3>
+        <p>يتم حساب السعر حسب الموقع ونوع الطلبية.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">4️⃣</div>
+        <h3>تأكيد الدفع</h3>
+        <p>أرسلي صورة وصل الدفع لتأكيد الطلب.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- حاسبة السعر -->
+  <section id="calculator">
+
+    <h2 class="section-title">🧮 حاسبة الطلبية</h2>
+
+    <div class="calculator">
+
+      <label>الموقع</label>
+
+      <select id="site">
+        <option value="temu">Temu</option>
+        <option value="shein">Shein</option>
+        <option value="aliexpress">AliExpress</option>
+      </select>
+
+
+      <label>نوع الطلبية</label>
+
+      <select id="orderType">
+        <option value="individual">طلبية فردية</option>
+        <option value="group">طلبية جماعية</option>
+      </select>
+
+
+      <label>سعر المنتج بالدولار $</label>
+
+      <input
+        type="number"
+        id="price"
+        placeholder="مثال: 10"
+        min="0"
+      >
+
+
+      <label>سعر الدولار بالدينار</label>
+
+      <input
+        type="number"
+        id="dollar"
+        value="250"
+        min="0"
+      >
+
+
+      <button
+        class="btn btn-main"
+        style="width:100%;margin-top:20px;"
+        onclick="calculatePrice()"
+      >
+        احسبي السعر
+      </button>
+
+      <div class="result" id="result">
+        أدخلي السعر لحساب التكلفة
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- الدفع -->
+  <section>
+
+    <h2 class="section-title">💳 تأكيد الدفع</h2>
+
+    <div class="payment">
+
+      <h3>بعد الاتفاق على السعر</h3>
+
+      <div class="payment-box">
+        <p>📱 الدفع عبر BaridiMob</p>
+        <p>📸 أرسلي صورة وصل الدفع في معلومات الطلب.</p>
+        <p>⚠️ لا يتم اعتماد الطلب إلا بعد التحقق من الدفع.</p>
+      </div>
+
+      <div class="upload">
+        📷
+        <p>يمكنك إرفاق صورة وصل الدفع عند إرسال الطلب.</p>
+        <input type="file" accept="image/*">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- الطلب -->
+  <section id="order">
+
+    <h2 class="section-title">🛒 إرسال طلبية</h2>
+
+    <form onsubmit="sendOrder(event)">
+
+      <label>الاسم</label>
+      <input
+        type="text"
+        id="name"
+        required
+        placeholder="اكتبي اسمك"
+      >
+
+      <label>رقم الهاتف</label>
+      <input
+        type="tel"
+        id="phone"
+        required
+        placeholder="05xxxxxxxx"
+      >
+
+      <label>الموقع</label>
+      <select id="orderSite">
+        <option>Temu</option>
+        <option>Shein</option>
+        <option>AliExpress</option>
+      </select>
+
+      <label>نوع الطلب</label>
+      <select id="type">
+        <option>طلبية فردية</option>
+        <option>طلبية جماعية</option>
+      </select>
+
+      <label>رابط المنتج</label>
+      <input
+        type="url"
+        id="link"
+        required
+        placeholder="ضعي رابط المنتج هنا"
+      >
+
+      <label>الكمية</label>
+      <input
+        type="number"
+        id="quantity"
+        min="1"
+        value="1"
+        required
+      >
+
+      <label>ملاحظات</label>
+      <textarea
+        id="notes"
+        rows="4"
+        placeholder="اللون، المقاس، الكمية..."
+      ></textarea>
+
+      <label>صورة وصل الدفع</label>
+      <input
+        type="file"
+        id="receipt"
+        accept="image/*"
+      >
+
+      <button
+        class="btn btn-main"
+        style="width:100%;margin-top:20px;"
+        type="submit"
+      >
+        📩 إرسال الطلب
+      </button>
+
+    </form>
+
+  </section>
+
+
+  <!-- آراء الزبائن -->
+  <section id="reviews">
+
+    <h2 class="section-title">💗 آراء الزبائن</h2>
+
+    <div class="reviews">
+
+      <div class="card">
+        <div class="stars">★★★★★</div>
+        <p>
+          "تعامل ممتاز والطلب وصل كما طلبت."
+        </p>
+        <h3>زبونة AYA SHOP</h3>
+      </div>
+
+      <div class="card">
+        <div class="stars">★★★★★</div>
+        <p>
+          "الخدمة سهلة والتواصل رائع."
+        </p>
+        <h3>زبونة AYA SHOP</h3>
+      </div>
+
+      <div class="card">
+        <div class="stars">★★★★★</div>
+        <p>
+          "طلبت من Temu وكل شيء كان منظمًا."
+        </p>
+        <h3>زبونة AYA SHOP</h3>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- التواصل -->
+  <section id="contact">
+
+    <h2 class="section-title">💌 تواصلي معي</h2>
+
+    <form onsubmit="sendMessage(event)">
+
+      <label>اسمك</label>
+      <input
+        type="text"
+        id="msgName"
+        required
+      >
+
+      <label>رسالتك</label>
+      <textarea
+        id="message"
+        rows="5"
+        required
+        placeholder="اكتبي رسالتك..."
+      ></textarea>
+
+      <button
+        class="btn btn-main"
+        style="width:100%;margin-top:20px;"
+      >
+        💬 إرسال الرسالة
+      </button>
+
+    </form>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <h2>AYA SHOP ✨</h2>
+
+  <p>
+    وسيطة شراء من المواقع العالمية 🛍️
+  </p>
+
+  <div class="social">
+
+    <a href="#" target="_blank">📘 Facebook</a>
+    <a href="#" target="_blank">📸 Instagram</a>
+    <a href="#" target="_blank">💬 WhatsApp</a>
+
+  </div>
+
+  <p class="watermark">
+    © 2026 AYA SHOP — جميع الحقوق محفوظة
+  </p>
+
+  <p class="watermark">
+    Anisa SD
+  </p>
+
+</footer>
+
+
+<script>
+
+  /*
+    غيّري هذه القيمة إلى رقم واتساب الخاص بك
+    بصيغة دولية، مثال:
+    213XXXXXXXXX
+  */
+
+  const whatsappNumber = "213XXXXXXXXX";
+
+
+  function calculatePrice() {
+
+    const site = document.getElementById("site").value;
+    const type = document.getElementById("orderType").value;
+
+    const price = Number(
+      document.getElementById("price").value
+    );
+
+    const dollar = Number(
+      document.getElementById("dollar").value
+    );
+
+
+    if (!price || !dollar) {
+
+      document.getElementById("result").innerText =
+        "⚠️ أدخلي سعر المنتج وسعر الدولار.";
+
+      return;
+    }
+
+
+    let commission = 0;
+
+
+    /*
+      العمولة قابلة للتعديل.
+      يمكنك تغيير النسب حسب طريقة عملك.
+    */
+
+    if (type === "individual") {
+      commission = price * 0.10;
+    } else {
+      commission = price * 0.07;
+    }
+
+
+    const totalDollar = price + commission;
+    const totalDinar = totalDollar * dollar;
+
+
+    document.getElementById("result").innerHTML =
+
+      "الموقع: " + site.toUpperCase() +
+      "<br>" +
+
+      "سعر المنتج: $" + price.toFixed(2) +
+      "<br>" +
+
+      "العمولة: $" + commission.toFixed(2) +
+      "<br>" +
+
+      "المجموع: <strong>" +
+      totalDinar.toFixed(0) +
+      " دج</strong>";
+
+  }
+
+
+  function sendOrder(event) {
+
+    event.preventDefault();
+
+
+    const name =
+      document.getElementById("name").value;
+
+    const phone =
+      document.getElementById("phone").value;
+
+    const site =
+      document.getElementById("orderSite").value;
+
+    const type =
+      document.getElementById("type").value;
+
+    const link =
+      document.getElementById("link").value;
+
+    const quantity =
+      document.getElementById("quantity").value;
+
+    const notes =
+      document.getElementById("notes").value;
+
+
+    const text =
+      `🛍️ طلب جديد - AYA SHOP
+
+👤 الاسم: ${name}
+
+📞 الهاتف: ${phone}
+
+🌐 الموقع: ${site}
+
+📦 نوع الطلب: ${type}
+
+🔗 رابط المنتج:
+${link}
+
+🔢 الكمية: ${quantity}
+
+📝 الملاحظات:
+${notes}`;
+
+
+    const url =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      encodeURIComponent(text);
+
+
+    window.open(url, "_blank");
+
+  }
+
+
+  function sendMessage(event) {
+
+    event.preventDefault();
+
+
+    const name =
+      document.getElementById("msgName").value;
+
+    const message =
+      document.getElementById("message").value;
+
+
+    const text =
+      `💌 رسالة جديدة - AYA SHOP
+
+👤 الاسم: ${name}
+
+💬 الرسالة:
+${message}`;
+
+
+    const url =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      encodeURIComponent(text);
+
+
+    window.open(url, "_blank");
+
+  }
+
+</script>
+
+</body>
+</html>
